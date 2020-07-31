@@ -1,0 +1,4 @@
+name: mc-d8-theming-patternlab
+recipe: drupal8
+config:
+  webroot: .
