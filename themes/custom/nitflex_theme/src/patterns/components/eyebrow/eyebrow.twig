@@ -1,6 +1,7 @@
 {{ attach_library('nitflex_theme/eyebrow') }}
 
-<div class="eyebrow {{ modifier }}" {{ extra_attributes }}>
+<div class="eyebrow{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+  {{- attributes ? attributes|without(class) -}}>
   <p class="eyebrow__text">
     {{ text }}
   </p>

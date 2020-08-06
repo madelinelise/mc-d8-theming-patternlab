@@ -1,4 +1,5 @@
-<article class="accordion {{ modifier }}" {{ extra_attributes }}>
+<article class="accordion{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+  {{- attributes ? attributes|without(class) -}}>
   {#
     Optional: Pass in Drupal specific functionality.
     Note that this is mostly relevant to nodes and blocks.

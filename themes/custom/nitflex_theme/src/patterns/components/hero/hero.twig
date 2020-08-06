@@ -1,6 +1,7 @@
 {{ attach_library('nitflex_theme/hero') }}
 
-<div class="hero {{ modifier }}" {{ extra_attributes }}>
+<div class="hero{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+  {{- attributes ? attributes|without(class) -}}>
   {#
     Optional: Pass in Drupal specific functionality.
     Note that this is mostly relevant to nodes and blocks.

@@ -37,6 +37,6 @@
     "url": content.field_link|field_raw('uri'),
     "link_text": content.field_link|field_raw('title'),
     "modifier": attributes.addClass(classes).class,
-    "extra_attributes": attributes|without(class)
+    "attributes": attributes|without(class)
   } only
 %}
