@@ -90,6 +90,11 @@ message:
     component:
       dist/css/message.css: {}
 
+movie-card:
+  css:
+    component:
+      dist/css/movie-card.css: {}
+
 tabs:
   css:
     component:
