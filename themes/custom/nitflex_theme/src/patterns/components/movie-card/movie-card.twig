@@ -1,0 +1,63 @@
+{{ attach_library('nitflex_theme/movie-card') }}
+
+<article class="movie-card {{ modifier }}
+  {{- attributes.class ? attributes.class -}}" {{- attributes ? attributes|without(class) -}}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+
+    {# Cover image #}
+    {% if cover_image %}
+      <div class="movie-card__cover-image">
+        {{ cover_image }}
+      </div>
+    {% endif %}
+
+    <div class="movie-card__content">
+      {# Heading #}
+      {% if heading %}
+        {%
+          include '@nitflex_theme/heading/heading.twig' with {
+            heading: heading
+          } only
+        %}
+      {% endif %}
+
+			{# Favorites Toggle  #}
+      <div class="movie-card__favorites-toggle">
+        {% block favorites_toggle %}
+          {%
+            include '@nitflex_theme/add-to-favorites/add-to-favorites.twig' with {
+              url: '#',
+            } only
+          %}
+        {% endblock %}
+      </div>
+
+      {# mpaa rating  #}
+      {% if mpaa_rating %}
+        <div class="movie-card__mpaa-rating">
+          {% include '@nitflex_theme/mpaa-rating/mpaa-rating.twig' with {
+              rating: mpaa_rating
+            } only
+          %}
+        </div>
+      {% endif %}
+
+      {# Average rating #}
+      {% if average_rating %}
+        <div class="movie-card__average-rating">
+          {% include '@nitflex_theme/average-rating/average-rating.twig' with {
+              count: average_rating
+            } only
+          %}
+        </div>
+      {% endif %}
+
+      {# Synopsis #}
+      {% if synopsis %}
+        <div class="movie-card__synopsis">
+          {{ synopsis }}
+        </div>
+      {% endif %}
+    </div>
+  </article>
